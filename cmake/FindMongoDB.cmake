@@ -3,7 +3,7 @@ include(ExternalProject)
 ExternalProject_Add(
     mongo-c-driver
     GIT_REPOSITORY "https://github.com/mongodb/mongo-c-driver.git"
-    GIT_TAG "1.13.1"
+    GIT_TAG ${MONGOC_DRIVER_VER}
     GIT_PROGRESS ON
     GIT_SHALLOW  ON
     
@@ -14,6 +14,7 @@ ExternalProject_Add(
         -DENABLE_STATIC:BOOL=OFF
         -DENABLE_EXAMPLES:BOOL=OFF
         -DENABLE_EXTRA_ALIGNMENT:BOOL=OFF   
+        -DENABLE_SASL=SSPI
         -DENABLE_SSL=WINDOWS     
 )
 
@@ -23,7 +24,7 @@ set(libbson-1.0_DIR ${CMAKE_SOURCE_DIR}/thirdparty/mongo-c-driver/lib/cmake/libb
 ExternalProject_Add(
     mongo-cxx-driver
     GIT_REPOSITORY "https://github.com/mongodb/mongo-cxx-driver.git"
-    GIT_TAG "r3.4.0"
+    GIT_TAG ${MONGOCXX_DRIVER_VER}
     GIT_PROGRESS ON
     GIT_SHALLOW  ON
         
@@ -36,8 +37,6 @@ ExternalProject_Add(
         -DBSONCXX_POLY_USE_MNMLSTC:BOOL=OFF
         -DBSONCXX_POLY_USE_STD:BOOL=OFF
         -DBOOST_ROOT:PATH=${BOOST_ROOT}
-        # -DLIBBSON_DIR:PATH=${CMAKE_SOURCE_DIR}/thirdparty/mongo-c-driver/
-        # -DLIBMONGOC_DIR=${CMAKE_SOURCE_DIR}/thirdparty/mongo-c-driver
         -Dlibmongoc-1.0_DIR:PATH=${libmongoc-1.0_DIR}
         -Dlibbson-1.0_DIR:PATH=${libbson-1.0_DIR}
     DEPENDS

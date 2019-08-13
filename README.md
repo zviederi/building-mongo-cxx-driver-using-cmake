@@ -9,7 +9,6 @@ Download [boost c++ 1.70](https://www.boost.org/users/history/version_1_70_0.htm
 Commands to build driver:
 ```
 mkdir build && cd build
-cmake --help # choose Generators
 cmake -G "Visual Studio 15 2017 Win64" .. # "-DCMAKE_BUILD_TYPE=Release" 
 cmake --build . # --config Release
 ```
