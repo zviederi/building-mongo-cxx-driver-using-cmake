@@ -20,8 +20,5 @@ cmake --build . # --config Release
 * https://github.com/dhandeo/cmake-mongo-cxx-driver
 * https://cliutils.gitlab.io/modern-cmake/chapters/basics.html
 * https://stackoverflow.com/questions/39598323/how-to-properly-link-libraries-with-cmake
-
-## Author Information
-------------------
-
-* [Ēriks Zviedrāns](mailto:eriks.zviedrans@gmail.com)
+* https://hackernoon.com/create-a-mongodb-sharded-cluster-with-ssl-enabled-dace56bc7a17
+* https://medium.com/@rajanmaharjan/secure-your-mongodb-connections-ssl-tls-92e2addb3c89

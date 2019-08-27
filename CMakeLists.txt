@@ -27,7 +27,6 @@ include_directories(${CMAKE_SOURCE_DIR}/thirdparty/mongo-cxx-driver/include/bson
                     ${CMAKE_SOURCE_DIR}/thirdparty/mongo-c-driver/include/libmongoc-1.0
                     ${BOOST_ROOT})
 
-
 # Populate a CMake variable with the sources
 add_executable(test_mongocxx main.cpp)
 
