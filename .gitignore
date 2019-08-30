@@ -11,5 +11,8 @@ CTestTestfile.cmake
 _deps
 build/*
 thirdparty/*
+drivers/*
+install/*
 *.code-workspace
 *.pem
+config.h

@@ -18,6 +18,8 @@
 #include <mongocxx/options/client.hpp>
 #include <mongocxx/options/ssl.hpp>
 
+#include "config.h"
+
 // Copied from
 // https://github.com/mongodb/mongo-cxx-driver/blob/master/examples/mongocxx/index.cpp
 namespace {
@@ -41,16 +43,15 @@ namespace {
 int main(int, char**) {
     
     mongocxx::instance inst{bsoncxx::stdx::make_unique<logger>(&std::cout)};
-
     try {       
         mongocxx::options::ssl ssl_opts{};
-        ssl_opts.ca_file( "CA.pem");
-        ssl_opts.pem_file("PEM.pem");       
+        ssl_opts.ca_file(CA_FILE_STR);
+        ssl_opts.pem_file(PEM_FILE_STR);       
         ssl_opts.allow_invalid_certificates(true);
         mongocxx::options::client client_opts{};
         client_opts.ssl_opts(ssl_opts);       
 
-        auto uri = mongocxx::uri{"mongodb://localhost:27017/?ssl=true"};
+        auto uri = mongocxx::uri{CONNECTION_URI_STR};
         auto conn = mongocxx::client{uri, client_opts};
         
         bsoncxx::builder::stream::document document{};

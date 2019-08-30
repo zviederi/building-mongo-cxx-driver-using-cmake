@@ -8,8 +8,8 @@ ExternalProject_Add(
     GIT_SHALLOW  ON
     
     CMAKE_ARGS
-        -DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_SOURCE_DIR}/thirdparty/mongo-c-driver 
-        -DBSON_ROOT_DIR:PATH=${CMAKE_SOURCE_DIR}/thirdparty/mongo-c-driver 
+        -DCMAKE_INSTALL_PREFIX:PATH=${MONGO_DRIVERS_DIR}/mongo-c-driver 
+        -DBSON_ROOT_DIR:PATH=${MONGO_DRIVERS_DIR}/mongo-c-driver 
         -DENABLE_TESTS:BOOL=OFF
         -DENABLE_STATIC:BOOL=OFF
         -DENABLE_EXAMPLES:BOOL=OFF
@@ -18,8 +18,8 @@ ExternalProject_Add(
         -DENABLE_SSL=WINDOWS     
 )
 
-set(libmongoc-1.0_DIR ${CMAKE_SOURCE_DIR}/thirdparty/mongo-c-driver/lib/cmake/libmongoc-1.0/) #
-set(libbson-1.0_DIR ${CMAKE_SOURCE_DIR}/thirdparty/mongo-c-driver/lib/cmake/libbson-1.0/) #
+set(libmongoc-1.0_DIR ${MONGO_DRIVERS_DIR}/mongo-c-driver/lib/cmake/libmongoc-1.0/) #
+set(libbson-1.0_DIR ${MONGO_DRIVERS_DIR}/mongo-c-driver/lib/cmake/libbson-1.0/) #
 
 ExternalProject_Add(
     mongo-cxx-driver
@@ -29,7 +29,7 @@ ExternalProject_Add(
     GIT_SHALLOW  ON
         
     CMAKE_ARGS 
-        -DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_SOURCE_DIR}/thirdparty/mongo-cxx-driver
+        -DCMAKE_INSTALL_PREFIX:PATH=${MONGO_DRIVERS_DIR}/mongo-cxx-driver
         -DBUILD_SHARED_LIBS:BOOL=ON
         -DENABLE_TESTS:BOOL=OFF
         -DENABLE_EXAMPLES:BOOL=OFF
