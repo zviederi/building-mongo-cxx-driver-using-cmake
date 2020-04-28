@@ -1,6 +1,6 @@
 # Building mongo cxx driver using cmake
 
-An example of how to compile a MongoDB cxx driver using CMake. Currently, the solution is only for Windows. After successful build drivers will be available in a drivers directory and mini-test program for driver testing in an install directory.
+An example of how to compile a shared MongoDB cxx driver using CMake. Currently, the solution is only for Windows. After successful build drivers will be available in a drivers directory and mini-test program for driver testing in an install directory.
 
 ## Steps how to build drivers and test it
 
@@ -29,7 +29,7 @@ cmake --build . --target install
 
 6. Run the test program:
 ```
-./install/test_mongocxx.exe
+../install/test_mongocxx.exe
 ```
 
 ## Source
